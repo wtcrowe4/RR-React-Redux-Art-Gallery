@@ -38,6 +38,7 @@ export const fetchData = () => {
         let state = getState();
         const response = await fetch(`https://collentionapi.metmuseum.org/api/collection/v1/objects/${state.data.objectId}`);
         const resData = await response.json();
+        console.log(resData)
         dispatch(setData(resData));
     }
     return fetchDataThunk;
