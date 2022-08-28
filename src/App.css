@@ -1,3 +1,45 @@
 .App {
   text-align: center;
 }
+button {
+  font-size: 1em;
+  margin: 5px;
+  padding: 5px;
+}
+
+input {
+  font-size: 1em;
+  padding: 5px;
+  margin: 5px;
+}
+
+/* img {
+  border: 4px solid #000;
+} */
+img {
+  border:solid 2px;
+  border-bottom-color:#ffe;
+  border-left-color:#eed;
+  border-right-color:#eed;
+  border-top-color:#ccb;
+  max-height:100%;
+  max-width:100%;
+}
+
+.frame {
+  background-color:#ddc;
+  border:solid 40px #eee;
+  border-bottom-color:#fff;
+  border-left-color:#eee;
+  border-radius:2px;
+  border-right-color:#eee;
+  border-top-color:#ddd;
+  box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
+  box-sizing:border-box;
+  display:inline-block;
+  margin:20px 20px;
+  padding:25px;
+  position:relative;
+  text-align:center;
+  width:80vw;
+}

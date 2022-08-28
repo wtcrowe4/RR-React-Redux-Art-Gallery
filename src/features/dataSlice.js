@@ -10,23 +10,23 @@ export const dataSlice = createSlice({
     initialState,
     reducers: {
         setData: (state, action) => {
-            return({...state, apiData : action.payload})
-            },   
+            return { ...state, apiData: action.payload } 
+        },   
 
         clearData: () => {
-            return(initialState)
+            return initialState
         },
         
         inputId: (state, action) => {
-            return({...state, objectId : action.payload})
+            return {...state, objectId : action.payload}
         },
 
         incrementId: (state) => {
-            return({...state, objectId : state.objectId + 1})
+            return {...state, objectId : state.objectId + 1}
         },
 
         decrementId: (state) => {
-            return({...state, objectId : state.objectId - 1})
+            return {...state, objectId : state.objectId - 1}
         }
     }
 });
@@ -35,11 +35,10 @@ export const { setData, clearData, inputId, incrementId, decrementId } = dataSli
 
 export const fetchData = () => {
     const fetchDataThunk = async (dispatch, getState) => {
-        let state = getState();
-        const response = await fetch(`https://collentionapi.metmuseum.org/api/collection/v1/objects/${state.data.objectId}`);
-        const resData = await response.json();
-        console.log(resData)
-        dispatch(setData(resData));
+        let state = getState()
+        const response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${state.data.objectId}`);
+        const resData = await response.json()
+        dispatch(setData(resData))
     }
     return fetchDataThunk;
 }
